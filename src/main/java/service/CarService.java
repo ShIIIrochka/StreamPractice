@@ -22,7 +22,9 @@ public class CarService {
      * Необходимо вернуть список строк из Condition
      */
     public List<String> getConditions(List<Car> cars) {
-        return cars.stream().map(car -> car.getCondition().toString()).toList();
+        return cars.stream()
+                .map(car -> car.getCondition().toString())
+                .toList();
     }
 
     /**
@@ -30,7 +32,11 @@ public class CarService {
      * Необходимо вернуть только те, у которых Condition - "NEW"
      */
     public List<Car> getNewCars(List<Car> cars) {
-        return cars.stream().filter(car -> car.getCondition().equals(Condition.NEW)).toList();
+        return cars
+                .stream()
+                .filter(
+                        car -> car.getCondition().equals(Condition.NEW))
+                .toList();
     }
 
     /**
@@ -46,7 +52,12 @@ public class CarService {
      * Необходимо каждому элементу списка в поле age прибавить 1
      */
     public List<Car> incrementCarAge(List<Car> cars) {
-        return cars.stream().forEach(car -> car.setAge(car.getAge() + 1)).toList();
+        return cars.stream()
+                .map(car -> {
+                    car.setAge(car.getAge() + 1);
+                    return car;
+                })
+                .toList();
     }
 
     /**
