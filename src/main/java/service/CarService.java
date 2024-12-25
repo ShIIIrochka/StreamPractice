@@ -139,10 +139,10 @@ public class CarService {
     public Boolean checkCarOwnerName(List<Car> cars) {
         return cars.stream()
                 .filter(car -> car.getCondition().equals(Condition.USED))
-                .flatMap(car -> car.getOwners().stream())
-                .map(owner -> owner.getName())
-                .anyMatch(name -> "Adam".equals(name));
+                .anyMatch(car -> car.getOwners().stream()
+                        .anyMatch(owner -> "Adam".equals(owner.getName())));
     }
+
 
     /**
      * Приходит список Car
