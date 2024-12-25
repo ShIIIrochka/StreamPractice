@@ -5,6 +5,7 @@ import model.CarInfo;
 import model.Owner;
 import utils.Condition;
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -53,10 +54,7 @@ public class CarService {
      */
     public List<Car> incrementCarAge(List<Car> cars) {
         return cars.stream()
-                .map(car -> {
-                    car.setAge(car.getAge() + 1);
-                    return car;
-                })
+                .peek(car -> car.setAge(car.getAge() + 1))
                 .toList();
     }
 
@@ -65,7 +63,9 @@ public class CarService {
      * Необходимо вернуть Car, у которого самое большое значение age
      */
     public Car getOldestCar(List<Car> cars) {
-        return null;
+        return cars.stream()
+                .max(Comparator.comparing(Car::getAge))
+                .orElseThrow(RuntimeException::new);
     }
 
     /**
