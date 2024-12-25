@@ -1,8 +1,9 @@
 package service;
 
 import model.Car;
-import CarInfo;
+import model.CarInfo;
 import model.Owner;
+import utils.Condition;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class CarService {
      * Необходимо вернуть список строк из Condition
      */
     public List<String> getConditions(List<Car> cars) {
-        return cars.stream().map(Car::getCondition).collect(Collectors.toList());
+        return null;
     }
 
     /**
@@ -29,7 +30,7 @@ public class CarService {
      * Необходимо вернуть только те, у которых Condition - "NEW"
      */
     public List<Car> getNewCars(List<Car> cars) {
-        return null;
+        return cars.stream().filter(car -> car.getCondition().equals(Condition.NEW)).toList();
     }
 
     /**

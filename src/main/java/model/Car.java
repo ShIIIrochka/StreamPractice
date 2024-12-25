@@ -1,11 +1,11 @@
 package model;
 
-import Condition;
+import utils.Condition;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Car {
+public class Car<Condition> {
 
     private String name;
     private int age;
@@ -66,11 +66,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", condition=" + condition +
-                ", owners=" + owners +
-                '}';
+        return STR."Car{name='\{name}', age=\{age}, condition=\{condition}, owners=\{owners}}";
     }
 }
