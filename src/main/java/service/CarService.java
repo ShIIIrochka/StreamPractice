@@ -22,7 +22,7 @@ public class CarService {
      * Необходимо вернуть список строк из Condition
      */
     public List<String> getConditions(List<Car> cars) {
-        return null;
+        return cars.stream().map(car -> car.getCondition().toString()).toList();
     }
 
     /**
@@ -38,7 +38,7 @@ public class CarService {
      * Необходимо вернуть количество Car, у которых больше 2 Owners
      */
     public long countCarsOwners(List<Car> cars) {
-        return 0;
+        return cars.stream().filter(car -> car.getOwners().size() > 2).count();
     }
 
     /**
