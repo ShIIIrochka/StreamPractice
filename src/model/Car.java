@@ -1,6 +1,6 @@
-package ru.tbank.hse.fd.streamPractise.model;
+package model;
 
-import ru.tbank.hse.fd.streamPractise.utils.Condition;
+import Condition;
 
 import java.util.List;
 import java.util.Objects;
