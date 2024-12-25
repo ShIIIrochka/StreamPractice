@@ -46,7 +46,7 @@ public class CarService {
      * Необходимо каждому элементу списка в поле age прибавить 1
      */
     public List<Car> incrementCarAge(List<Car> cars) {
-        return null;
+        return cars.stream().forEach(car -> car.setAge(car.getAge() + 1)).toList();
     }
 
     /**
