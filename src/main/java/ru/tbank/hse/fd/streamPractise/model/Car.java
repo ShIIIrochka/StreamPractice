@@ -1,11 +1,11 @@
-package model;
+package ru.tbank.hse.fd.streamPractise.model;
 
-import utils.Condition;
+import ru.tbank.hse.fd.streamPractise.utils.Condition;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Car<Condition> {
+public class Car {
 
     private String name;
     private int age;
@@ -66,6 +66,11 @@ public class Car<Condition> {
 
     @Override
     public String toString() {
-        return STR."Car{name='\{name}', age=\{age}, condition=\{condition}, owners=\{owners}}";
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", condition=" + condition +
+                ", owners=" + owners +
+                '}';
     }
 }
